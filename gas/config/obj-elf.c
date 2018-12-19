@@ -2288,16 +2288,11 @@ void
 sco_id (void)
 {
 
-  char *name;
-  unsigned int c;
-  char ch;
   char *p;
   asection *seg = now_seg;
   subsegT subseg = now_subseg;
   Elf_Internal_Note i_note;
-  Elf_External_Note e_note;
   asection *note_secp = NULL;
-  int i, len;
 
   /* create the .note section */
 
