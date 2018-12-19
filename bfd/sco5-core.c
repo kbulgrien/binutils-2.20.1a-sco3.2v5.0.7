@@ -116,7 +116,7 @@ const bfd_target *
 sco5_core_file_p (abfd)
      bfd *abfd;
 {
-  int coffset_siz, val, nsecs, cheadoffs;
+  int coffset_siz, nsecs, cheadoffs;
   int coresize;
   struct user *u;
   struct coreoffsets coffsets;
