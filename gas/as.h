@@ -121,6 +121,13 @@ typedef int * va_list;
 /* Define the standard progress macros.  */
 #include "progress.h"
 
+/* For an unexplained reason, on this platform, strings.h is not included even
+   though it should be without his patch.  Even CFLAGS="-DHAVE_STRINGS_H" is
+   ineffective (using self-built gcc 3.4.6 ). */
+#if (defined(_SCO_DS))
+#include <strings.h>
+#endif
+
 /* This doesn't get taken care of anywhere.  */
 #ifndef __MWERKS__  /* Metrowerks C chokes on the "defined (inline)"  */
 #if !defined (__GNUC__) && !defined (inline)

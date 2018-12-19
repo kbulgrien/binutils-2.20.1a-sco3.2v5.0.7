@@ -35,6 +35,13 @@
 #include "coff/internal.h"
 #include "libcoff.h"
 
+/* For an unexplained reason, on this platform, strings.h is not included even
+   though it should be without his patch.  Even CFLAGS="-DHAVE_STRINGS_H" is
+   ineffective (using self-built gcc 3.4.6 ). */
+#if (defined(_SCO_DS))
+#include <strings.h>
+#endif
+
 /* FIXME: See bfd/peXXigen.c for why we include an architecture specific
    header in generic PE code.  */
 #include "coff/i386.h"
